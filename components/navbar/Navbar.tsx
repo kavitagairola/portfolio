@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg border-b border-white/10 bg-[#030712]/70">
       <Container>
-        <nav className="flex items-center justify-between h-20">
+        <nav className="flex items-center justify-between h-20 pt-20">
 
           {/* Logo */}
           <h1 className="text-2xl font-bold">
