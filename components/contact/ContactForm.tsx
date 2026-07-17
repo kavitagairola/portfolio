@@ -36,6 +36,18 @@ const handleSubmit = async (
     return;
   }
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (!emailRegex.test(formData.email)) {
+  toast.error("Please enter a valid email address.");
+  return;
+}
+
+if (formData.message.trim().length < 10) {
+  toast.error("Message should be at least 10 characters.");
+  return;
+}
+  
   setLoading(true);
 
 
