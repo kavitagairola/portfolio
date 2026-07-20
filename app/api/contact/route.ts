@@ -1,47 +1,47 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import { NextResponse } from "next/server";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, subject, message } = body;
 
-    // 👇 YAHAN ADD KARO
-    console.log("EMAIL_USER:", process.env.EMAIL_USER);
-    console.log("EMAIL_PASS exists:", !!process.env.EMAIL_PASS);
-    console.log("EMAIL_PASS length:", process.env.EMAIL_PASS?.length);
-    console.log("NODE_ENV:", process.env.NODE_ENV);
-
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+    const { error } = await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: "kannuarmy2@gmail.com", // <-- apna email
       replyTo: email,
       subject: `Portfolio Contact: ${subject}`,
       html: `
         <h2>New Portfolio Contact</h2>
+
         <p><strong>Name:</strong> ${name}</p>
+
         <p><strong>Email:</strong> ${email}</p>
+
         <p><strong>Subject:</strong> ${subject}</p>
+
         <p><strong>Message:</strong></p>
+
         <p>${message}</p>
       `,
     });
+
+    if (error) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: error.message,
+        },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({
       success: true,
       message: "Email sent successfully!",
     });
-
   } catch (error) {
     console.error(error);
 
