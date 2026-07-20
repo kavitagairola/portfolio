@@ -8,25 +8,28 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, subject, message } = body;
 
-    const { error } = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "kannuarmy2@gmail.com", // <-- apna email
-      replyTo: email,
-      subject: `Portfolio Contact: ${subject}`,
-      html: `
-        <h2>New Portfolio Contact</h2>
+    const { data, error } = await resend.emails.send({
+  from: "onboarding@resend.dev",
+  to: "kannuarmy2@gmail.com",
+  replyTo: email,
+  subject: `Portfolio Contact: ${subject}`,
+  html: `
+    <h2>New Portfolio Contact</h2>
 
-        <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Name:</strong> ${name}</p>
 
-        <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Email:</strong> ${email}</p>
 
-        <p><strong>Subject:</strong> ${subject}</p>
+    <p><strong>Subject:</strong> ${subject}</p>
 
-        <p><strong>Message:</strong></p>
+    <p><strong>Message:</strong></p>
 
-        <p>${message}</p>
-      `,
-    });
+    <p>${message}</p>
+  `,
+});
+
+console.log(data);
+console.log(error);
 
     if (error) {
       return NextResponse.json(
