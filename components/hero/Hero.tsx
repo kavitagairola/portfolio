@@ -34,7 +34,13 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
 
-              <Button text="Hire Me" />
+              <button>
+                <a href="#contact"  
+                className="px-6 py-3 rounded-lg border border-gray-500 bg-purple-500 transition hover:shadow-lg"
+                >
+  Hire Me
+</a>
+              </button>
 
               <a
   href="/resume/resume.pdf"
