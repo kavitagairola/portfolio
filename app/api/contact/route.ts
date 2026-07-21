@@ -14,18 +14,34 @@ export async function POST(request: Request) {
   replyTo: email,
   subject: `Portfolio Contact: ${subject}`,
   html: `
-    <h2>New Portfolio Contact</h2>
+<div style="font-family: Arial, sans-serif; background:#f4f4f4; padding:30px;">
+  <div style="max-width:600px; margin:auto; background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
 
-    <p><strong>Name:</strong> ${name}</p>
+    <div style="background:#6d28d9; color:white; padding:20px; text-align:center;">
+      <h2 style="margin:0;">📩 New Portfolio Contact</h2>
+    </div>
 
-    <p><strong>Email:</strong> ${email}</p>
+    <div style="padding:25px; color:#333;">
+      <p><strong>👤 Name:</strong> ${name}</p>
+      <p><strong>📧 Email:</strong> ${email}</p>
+      <p><strong>📌 Subject:</strong> ${subject}</p>
 
-    <p><strong>Subject:</strong> ${subject}</p>
+      <hr style="margin:20px 0;" />
 
-    <p><strong>Message:</strong></p>
+      <h3>💬 Message</h3>
 
-    <p>${message}</p>
-  `,
+      <p style="line-height:1.7;">
+        ${message}
+      </p>
+    </div>
+
+    <div style="background:#f9fafb; padding:15px; text-align:center; font-size:14px; color:#666;">
+      Sent from your Portfolio Website
+    </div>
+
+  </div>
+</div>
+`,
 });
 
 console.log(data);
