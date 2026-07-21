@@ -56,7 +56,7 @@ const scrolled = useScroll();
 
     {/* Desktop Button */}
     <div className="hidden md:block">
-      <Button text="Hire Me" />
+      <a href="#contact"><Button text="Hire Me" /></a>
     </div>
 
     {/* Mobile Menu Button */}
