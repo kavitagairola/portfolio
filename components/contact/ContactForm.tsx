@@ -45,7 +45,8 @@ if (!emailRegex.test(formData.email)) {
 
 if (formData.message.trim().length < 10) {
   toast.error("Message should be at least 10 characters.");
-  return;
+return;
+  
 }
   
   setLoading(true);
@@ -89,8 +90,8 @@ if (data.success) {
       className="
       rounded-3xl
       border
-      border-white/10
-      bg-white/5
+      border-[var(--border)]
+bg-[var(--surface)]
       backdrop-blur-lg
       p-8
       space-y-6
@@ -111,7 +112,10 @@ if (data.success) {
   value={formData.email}
   onChange={handleChange}
   placeholder="Email Address"
-  className="w-full rounded-xl bg-white/5 border border-white/10 p-4 outline-none focus:border-violet-500"
+  className="w-full rounded-xl bg-[var(--background)]
+border-[var(--border)]
+text-[var(--text)]
+placeholder:text-[var(--paragraph)] p-4 outline-none focus:border-violet-500"
 />
 
       <input

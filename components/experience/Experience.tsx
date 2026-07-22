@@ -3,21 +3,20 @@ import { EXPERIENCE } from "@/data/portfolio";
 import FadeUp from "../animations/FadeUp";
 export default function Experience() {
   return (
-    <section
+<section
   id="experience"
-  className="pt-24 pb-12 lg:pt-32 lg:pb-16"
+  className="pt-24 pb-12 lg:pt-32 lg:pb-16 bg-[var(--background)] transition-colors duration-300"
 >
       <Container>
 
 <FadeUp>
 
 <div className="text-center mb-16">
-          <p className="tex
-          t-violet-400 uppercase tracking-[4px] font-semibold">
+          <p className="text-violet-400 uppercase tracking-[4px] font-semibold">
             Experience
           </p>
 
-          <h2 className="text-4xl lg:text-5xl font-bold mt-3">
+          <h2 className="text-4xl lg:text-5xl font-bold mt-3 text-[var(--text)]">
             My Professional Journey
           </h2>
         </div>
@@ -33,13 +32,13 @@ export default function Experience() {
 
               {/* Dot */}
 
-              <div className="absolute -left-[11px] top-2 w-5 h-5 rounded-full bg-violet-500 border-4 border-[#030712]" />
+              <div className="absolute -left-[11px] top-2 w-5 h-5 rounded-full bg-violet-500 border-4 border-[var(--background)]" />
 <div
   className="
   rounded-2xl
   border
-  border-white/10
-  bg-white/5
+ border-[var(--border)]
+bg-[var(--surface)]
   backdrop-blur-md
   p-6
   transition-all
@@ -53,15 +52,15 @@ export default function Experience() {
                 {item.year}
               </span>
 
-              <h3 className="text-2xl font-bold mt-2">
+             <h3 className="text-2xl font-bold mt-2 text-[var(--text)]">
                 {item.role}
               </h3>
 
-              <h4 className="text-gray-300 mt-1">
+              <h4 className="text-[var(--paragraph)] mt-1">
                 {item.company}
               </h4>
 
-              <p className="text-gray-400 leading-8 mt-4">
+              <p className="text-[var(--paragraph)] leading-8 mt-4">
                 {item.description}
               </p>
 </div>

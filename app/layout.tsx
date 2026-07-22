@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-
+import ThemeProvider from "@/components/providers/ThemeProvider";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -54,21 +54,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${sora.variable}`}>
-        {children}
+        <ThemeProvider>
+          {children}
 
-        <Toaster
-          position="top-right"
-          toastOptions={{
-            duration: 3000,
-            style: {
-              background: "#111827",
-              color: "#fff",
-              border: "1px solid #8b5cf6",
-            },
-          }}
-        />
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 3000,
+              style: {
+                background: "#111827",
+                color: "#fff",
+                border: "1px solid #8b5cf6",
+              },
+            }}
+          />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -13,11 +13,11 @@ export default function ContactInfo() {
   return (
     <div className="space-y-8">
 
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl font-bold text-[var(--text)] transition-colors duration-300">
         Get In Touch
       </h3>
 
-      <p className="text-gray-400 leading-8">
+      <p className="text-[var(--paragraph)] leading-8 transition-colors duration-300">
         I'm always open to discussing new opportunities,
         freelance projects, or full-time roles.
       </p>
@@ -26,17 +26,23 @@ export default function ContactInfo() {
 
         <div className="flex items-center gap-4">
           <Mail className="text-violet-400" size={22} />
-          <span>{CONTACT.email}</span>
+          <span className="text-[var(--text)]">
+  {CONTACT.email}
+</span>
         </div>
 
         <div className="flex items-center gap-4">
           <Phone className="text-violet-400" size={22} />
-          <span>{CONTACT.phone}</span>
+         <span className="text-[var(--text)]">
+  {CONTACT.phone}
+</span>
         </div>
 
         <div className="flex items-center gap-4">
           <MapPin className="text-violet-400" size={22} />
-          <span>{CONTACT.location}</span>
+          <span className="text-[var(--text)]">
+  {CONTACT.location}
+</span>
         </div>
 
       </div>
@@ -46,7 +52,7 @@ export default function ContactInfo() {
         <a
           href={CONTACT.github}
           target="_blank"
-          className="hover:text-violet-400 transition"
+         className="text-[var(--text)] hover:text-violet-400 transition-colors duration-300"
         >
        <FaGithub size={26} />
         </a>
@@ -54,7 +60,7 @@ export default function ContactInfo() {
         <a
           href={CONTACT.linkedin}
           target="_blank"
-          className="hover:text-violet-400 transition"
+         className="text-[var(--text)] hover:text-violet-400 transition-colors duration-300"
         >
           <FaLinkedin size={26} />
         </a>

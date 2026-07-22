@@ -23,8 +23,8 @@ export default function ProjectCard({
       group
       overflow-hidden
       rounded-3xl
-      border border-white/10
-      bg-white/5
+     border border-[var(--border)]
+bg-[var(--surface)]
       backdrop-blur-lg
       transition-all
       duration-500
@@ -36,7 +36,7 @@ export default function ProjectCard({
       {/* Image */}
       <div className="relative h-60 overflow-hidden">
 
-  <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80"></div>
+  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80"></div>
         <Image
   src={image}
   alt={title}
@@ -49,11 +49,11 @@ export default function ProjectCard({
       {/* Content */}
       <div className="p-7">
 
-        <h3 className="text-2xl font-bold text-white">
+        <h3 className="text-2xl font-bold text-[var(--text)]">
           {title}
         </h3>
 
-        <p className="mt-4 text-gray-400 leading-7">
+        <p className="mt-4 text-[var(--paragraph)] leading-7">
           {description}
         </p>
 
@@ -99,7 +99,7 @@ hover:scale-105
                 bg-violet-600
                 px-5
                 py-3
-                text-white
+                     text-[var(--text)]
                 font-medium
                 hover:bg-violet-500
                 transition
@@ -121,10 +121,10 @@ hover:scale-105
                 gap-2
                 rounded-xl
                 border
-                border-white/20
+                border-[var(--border)]
                 px-5
                 py-3
-                text-white
+                text-[var(--text)]
                 hover:border-violet-500
                 hover:text-violet-400
                 transition

@@ -5,10 +5,10 @@ import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="py-24 lg:py-32"
-    >
+  <section
+  id="contact"
+  className="py-24 lg:py-32 bg-[var(--background)] transition-colors duration-300"
+>
       <Container>
 
         <SectionTitle

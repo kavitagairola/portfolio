@@ -7,7 +7,7 @@ export default function Hero() {
   return (
 <section
   id="home"
-  className="min-h-screen flex items-center pt-20"
+  className="min-h-screen flex items-center pt-20 bg-[var(--background)] transition-colors duration-300"
 >
       <Container>
        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-16">
@@ -20,15 +20,15 @@ export default function Hero() {
               {HERO_CONTENT.greeting}
             </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-[var(--text)] transition-colors duration-300">
               {HERO_CONTENT.name}
             </h1>
 
-            <h2 className="mt-5 text-2xl md:text-3xl text-gray-300 font-semibold">
+            <h2 className="mt-5 text-2xl md:text-3xl font-semibold text-[var(--paragraph)] transition-colors duration-300">
               {HERO_CONTENT.role}
             </h2>
 
-            <p className="mt-6 text-gray-400 leading-8 max-w-xl mx-auto lg:mx-0">
+            <p className="mt-6 leading-8 max-w-xl mx-auto lg:mx-0 text-[var(--paragraph)] transition-colors duration-300">
               {HERO_CONTENT.description}
             </p>
 
@@ -36,7 +36,7 @@ export default function Hero() {
 
               <button>
                 <a href="#contact"  
-                className="px-6 py-3 rounded-lg border border-gray-500 bg-purple-500 transition hover:shadow-lg"
+               className="px-6 py-3 rounded-lg bg-violet-600 text-white hover:bg-violet-700 transition"
                 >
   Hire Me
 </a>
@@ -45,7 +45,7 @@ export default function Hero() {
               <a
   href="/resume/resume.pdf"
   download
-  className="px-6 py-3 rounded-lg border border-gray-500 hover:border-purple-500 transition"
+  className="px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text)] hover:border-violet-500 transition"
 >
   Download CV
 </a>

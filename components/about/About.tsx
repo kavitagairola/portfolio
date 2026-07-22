@@ -4,7 +4,10 @@ import Container from "../ui/Container";
 import { ABOUT, ABOUT_HIGHLIGHTS } from "@/data/portfolio";
 export default function About() {
   return (
-    <section id="about" className="py-24">
+    <section
+  id="about"
+  className="py-24 bg-[var(--background)] transition-colors duration-300"
+>
       <Container>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -18,7 +21,7 @@ export default function About() {
     alt="About"
     width={420}
     height={520}
-    className="rounded-3xl object-cover shadow-2xl"
+    className="rounded-3xl object-cover shadow-2xl border border-[var(--border)]"
   />
 
 </div>
@@ -33,11 +36,11 @@ export default function About() {
               {ABOUT.subtitle}
             </p>
 
-            <h2 className="mt-4 max-w-xl text-4xl lg:text-5xl font-bold leading-tight">
+            <h2 className="mt-4 max-w-xl text-4xl lg:text-5xl font-bold leading-tight text-[var(--text)]">
               {ABOUT.title}
             </h2>
 
-            <p className="mt-8 max-w-2xl text-gray-400 leading-8">
+            <p className="mt-8 max-w-2xl text-[var(--paragraph)] leading-8">
               {ABOUT.description}
             </p>
 
@@ -49,8 +52,8 @@ export default function About() {
       className="
 rounded-2xl
 border
-border-white/10
-bg-white/5
+border-[var(--border)]
+bg-[var(--surface)]
 backdrop-blur-md
 p-5
 transition-all
@@ -60,11 +63,11 @@ hover:border-violet-500
 hover:shadow-[0_0_25px_rgba(139,92,246,.25)]
 "
     >
-      <h3 className="text-xl font-bold text-white">
+      <h3 className="text-xl font-bold text-[var(--text)]">
         {item.title}
       </h3>
 
-      <p className="text-gray-400 mt-2 text-sm">
+      <p className="text-[var(--paragraph)] mt-2 text-sm">
         {item.subtitle}
       </p>
     </div>
@@ -74,7 +77,7 @@ hover:shadow-[0_0_25px_rgba(139,92,246,.25)]
 
 <div className="mt-10">
   <a
-    href="/resume/Kavita-Rohini.pdf"
+    href="/resume/resume.pdf"
     download
     className="
 inline-flex

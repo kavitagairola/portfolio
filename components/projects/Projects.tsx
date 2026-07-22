@@ -5,10 +5,10 @@ import { PROJECTS } from "@/data/portfolio";
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="py-24 lg:py-32"
-    >
+<section
+  id="projects"
+  className="py-24 lg:py-32 bg-[var(--background)] transition-colors duration-300"
+>
       <Container>
 
         <SectionTitle

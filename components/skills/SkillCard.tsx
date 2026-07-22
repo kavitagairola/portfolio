@@ -11,8 +11,8 @@ export default function SkillCard({
     <div
       className="
       rounded-2xl
-      border border-white/10
-      bg-white/5
+      border border-[var(--border)]
+bg-[var(--surface)]
       backdrop-blur-md
       p-8
       transition-all
@@ -23,7 +23,7 @@ export default function SkillCard({
     "
     >
       {/* Title */}
-      <h3 className="text-2xl font-bold text-white">
+      <h3 className="text-2xl font-bold text-[var(--text)]">
         {title}
       </h3>
 
@@ -46,7 +46,7 @@ export default function SkillCard({
         py-3
         text-sm
         font-medium
-        text-gray-300
+        text-[var(--paragraph)]
         transition-all
         duration-300
         hover:bg-violet-500
